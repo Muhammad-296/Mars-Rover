@@ -1,0 +1,15 @@
+esp32 30 pin -> 3.3V
+===============================
+2 x O-led display I2C -> 3.3V
+BMP 280 -> 3.3V
+DHT 22 -> 5V
+Ultrasonic -> 3.3V
+===============================
+esp32 cam 
+===============================
+servo motor sg90 -> 5V
+servo motor MG996R -> 5V
+L298N + 6 Motors (3 on each channel) -> 12V
+حسبي الله ونعم الوكيل
+
+
