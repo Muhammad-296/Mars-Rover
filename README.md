@@ -138,19 +138,6 @@ This project supports development and configuration in multiple programming lang
 5. Connect HC-SR04 sensor to GPIO330/470
 6. Configure I²C buses for BMP280 and OLED displays
 
-### Software Setup
-```bash
-# Example setup for Arduino/PlatformIO
-git clone <repository-url>
-cd robot-project
-platformio run --target upload
-
-# For web interface
-cd web-ui
-npm install
-npm start
-```
-
 ## 📚 Documentation
 
 ### Wiring Specifications
