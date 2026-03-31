@@ -173,4 +173,3 @@ For technical issues, hardware questions, or feature requests, please refer to t
 
 **Last Updated:** March 31, 2026  
 **Project Status:** Active Development  
-**Supported Languages:** C, C++, Python, JavaScript, TypeScript, MicroPython, Arduino, Go, Node.js, and more
