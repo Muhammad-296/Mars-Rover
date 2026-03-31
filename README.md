@@ -88,22 +88,7 @@ This project supports development and configuration in multiple programming lang
 
 ### **Backend & Server**
 - **Python** - Data processing, sensor algorithms, testing scripts
-- **Go** - High-performance WebSocket server alternative
-- **Node.js (JavaScript)** - Express-based WebSocket server
 
-### **Configuration & Infrastructure**
-- **YAML** - Configuration files, hardware setup definitions
-- **JSON** - Data serialization, sensor calibration profiles
-- **Shell** - Build scripts, deployment automation
-- **Makefile** - Project build and compilation
-
-### **Hardware Description & Documentation**
-- **Markdown** - Technical documentation, README files
-- **LaTeX** - Circuit diagrams, technical specifications
-
-### **Version Control & CI/CD**
-- **YAML** - GitHub Actions workflow configuration
-- **Bash/Shell** - Automation scripts
 
 ## ✨ Features
 
