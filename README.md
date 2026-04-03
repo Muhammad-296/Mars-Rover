@@ -1,22 +1,31 @@
 <div align="center">
 
-<!-- Animated Title -->
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=32&duration=3000&pause=1000&color=00E6FF&center=true&vCenter=true&width=800&lines=🚀+MARS+ROVER+MISSION+CONTROL;ESP32+%7C+Python+GUI+%7C+WebSocket;Telemetry+%7C+Sensors+%7C+Autonomous+Stop" alt="Typing SVG" />
-</a>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:02040A,30:001822,70:003344,100:00E6FF&height=200&section=header&text=🚀%20MARS%20ROVER&fontSize=52&fontColor=00E6FF&fontAlignY=45&desc=MISSION%20CONTROL%20v5.1%20%7C%20ESP32%20%7C%20Python%20GUI%20%7C%20WebSocket&descAlignY=68&descSize=16&descColor=00B8CC&animation=fadeIn" width="100%"/>
 
 <br/>
 
-<img src="https://img.shields.io/badge/STATUS-OPERATIONAL-00ff91?style=for-the-badge&logo=satellite&logoColor=black" />
-<img src="https://img.shields.io/badge/VERSION-v5.1-00e6ff?style=for-the-badge&logo=rocket&logoColor=black" />
-<img src="https://img.shields.io/badge/LICENSE-MIT-ffb900?style=for-the-badge" />
-<img src="https://img.shields.io/badge/PLATFORM-ESP32-ff2d37?style=for-the-badge&logo=espressif&logoColor=white" />
+<!-- Animated typing SVG — renders on GitHub.com -->
+<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=700&size=22&duration=2800&pause=900&color=00E6FF&background=00000000&center=true&vCenter=true&multiline=false&width=700&height=50&lines=◈+DRIVE+·+CAMERA+·+GRIPPER+·+TELEMETRY+◈;◈+BMP280+·+ULTRASONIC+·+OLED+·+WebSocket+◈;◈+Safety+Watchdog+·+Instant+Stop+·+Live+Charts+◈" alt="Mission capabilities" />
 
 <br/><br/>
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:02040A,50:00233A,100:00E6FF&height=120&section=header&text=&animation=fadeIn" width="100%"/>
-</p>
+<!-- Shields with pulse animation via reloadable URL -->
+<img src="https://img.shields.io/badge/🟢%20STATUS-OPERATIONAL-00ff91?style=for-the-badge&labelColor=001a0e" />
+&nbsp;
+<img src="https://img.shields.io/badge/📡%20VERSION-v5.1-00e6ff?style=for-the-badge&labelColor=001822" />
+&nbsp;
+<img src="https://img.shields.io/badge/⚖️%20LICENSE-MIT-ffb900?style=for-the-badge&labelColor=1a1100" />
+&nbsp;
+<img src="https://img.shields.io/badge/🔧%20PLATFORM-ESP32-ff2d37?style=for-the-badge&logo=espressif&logoColor=white&labelColor=1a0003" />
+&nbsp;
+<img src="https://img.shields.io/badge/🐍%20GUI-PyQt5-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=0a0f1a" />
+&nbsp;
+<img src="https://img.shields.io/badge/📶%20PROTOCOL-WebSocket-ff8800?style=for-the-badge&labelColor=1a0d00" />
+
+<br/><br/>
+
+<!-- Animated skill icons -->
+<img src="https://skillicons.dev/icons?i=python,cpp,arduino,github,vscode&theme=dark&perline=5" />
 
 </div>
 
@@ -334,14 +343,32 @@ This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) 
 
 ---
 
+---
+
+## ◈ &nbsp; REPO STATS
+
 <div align="center">
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00E6FF,50:00233A,100:02040A&height=100&section=footer&animation=fadeIn" width="100%"/>
-</p>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&repo=mars-rover&theme=react-dark&bg_color=02040A&color=00E6FF&line=00B8CC&point=00FF91&area=true&hide_border=true" width="100%" alt="Activity Graph"/>
 
-**Built with ❤️ for robotics exploration**
+</div>
 
-*Mars Rover Mission Control v5.1 — Enhanced Edition*
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00E6FF,30:007799,70:001822,100:02040A&height=140&section=footer&text=Built%20for%20Exploration&fontSize=20&fontColor=00E6FF&fontAlignY=65&animation=fadeIn" width="100%"/>
+
+<br/>
+
+<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=14&duration=4000&pause=2000&color=005566&center=true&vCenter=true&width=600&lines=◈+Mars+Rover+Mission+Control+v5.1+—+Enhanced+Edition+◈;◈+ESP32+·+Python+·+WebSocket+·+Real-Time+Telemetry+◈" alt="footer typing" />
+
+<br/><br/>
+
+<img src="https://img.shields.io/github/stars/YOUR_USERNAME/mars-rover?style=for-the-badge&color=ffb900&labelColor=1a1100&label=⭐%20STARS" />
+&nbsp;
+<img src="https://img.shields.io/github/forks/YOUR_USERNAME/mars-rover?style=for-the-badge&color=00ff91&labelColor=001a0e&label=🍴%20FORKS" />
+&nbsp;
+<img src="https://img.shields.io/github/issues/YOUR_USERNAME/mars-rover?style=for-the-badge&color=ff2d37&labelColor=1a0003&label=🐛%20ISSUES" />
 
 </div>
