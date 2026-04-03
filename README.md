@@ -367,11 +367,11 @@ This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) 
 
 <br/><br/>
 
-<img src="https://img.shields.io/github/stars/YOUR_USERNAME/mars-rover?style=for-the-badge&color=ffb900&labelColor=1a1100&label=⭐%20STARS" />
+<img src="https://img.shields.io/github/stars/Muhammad-296/mars-rover?style=for-the-badge&color=ffb900&labelColor=1a1100&label=⭐%20STARS" />
 &nbsp;
-<img src="https://img.shields.io/github/forks/YOUR_USERNAME/mars-rover?style=for-the-badge&color=00ff91&labelColor=001a0e&label=🍴%20FORKS" />
+<img src="https://img.shields.io/github/forks/Muhammad-296/mars-rover?style=for-the-badge&color=00ff91&labelColor=001a0e&label=🍴%20FORKS" />
 &nbsp;
-<img src="https://img.shields.io/github/issues/YOUR_USERNAME/mars-rover?style=for-the-badge&color=ff2d37&labelColor=1a0003&label=🐛%20ISSUES" />
+<img src="https://img.shields.io/github/issues/Muhammad-296/mars-rover?style=for-the-badge&color=ff2d37&labelColor=1a0003&label=🐛%20ISSUES" />
 
 </div>
 
