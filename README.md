@@ -35,24 +35,24 @@
 - [📊 Project Stats](#-project-stats-at-a-glance)
 - [🛸 Mission Overview](#-mission-overview)
 - [⚡ Core Features](#-core-features)
-- [🗺️ System Architecture](#-system-architecture)
-- [🔌 Wiring Diagram](#-wiring-diagram)
+- [🗺️ System Architecture](#system-architecture)
+- [🔌 Wiring Diagram](#wiring-diagram)
 - [🔩 Hardware Components](#-hardware-components)
-- [🗃️ Pin Mapping](#-pin-mapping)
+- [🗃️ Pin Mapping](#pin-mapping)
 - [📍 ESP32 Pinout Visual](#-esp32-pinout-visual)
 - [💻 Software Stack](#-software-stack)
 - [🎮 GUI Panels](#-gui-panels)
-- [⌨️ Keyboard Controls](#-keyboard-controls)
+- [⌨️ Keyboard Controls](#keyboard-controls)
 - [📡 WebSocket Protocol](#-websocket-command-protocol)
-- [🛡️ Safety Features](#-safety-features)
-- [🖥️ OLED Display Panels](#-oled-display-panels)
+- [🛡️ Safety Features](#safety-features)
+- [🖥️ OLED Display Panels](#oled-display-panels)
 - [🚀 Getting Started](#-getting-started)
 - [📁 Project Structure](#-project-structure)
-- [🗺️ Roadmap](#-roadmap)
+- [🗺️ Roadmap](#roadmap)
 - [❓ FAQ](#-faq)
 - [🔧 Troubleshooting](#-troubleshooting)
 - [📋 Changelog](#-changelog)
-- [⚠️ Known Limitations](#-known-limitations)
+- [⚠️ Known Limitations](#️-known-limitations)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
 
@@ -98,6 +98,7 @@
 
 ---
 
+<a id="system-architecture"></a>
 ## 🗺️ System Architecture
 
 ```
@@ -135,6 +136,7 @@
 
 ---
 
+<a id="wiring-diagram"></a>
 ## 🔌 Wiring Diagram
 
 ```
@@ -195,6 +197,7 @@
 
 ---
 
+<a id="pin-mapping"></a>
 ## 🗃️ Pin Mapping
 
 | Function | GPIO | Type | Notes |
@@ -284,6 +287,7 @@
 
 ---
 
+<a id="keyboard-controls"></a>
 ## ⌨️ Keyboard Controls
 
 | Key | Action | Category |
@@ -324,6 +328,7 @@
 
 ---
 
+<a id="safety-features"></a>
 ## 🛡️ Safety Features
 
 | Feature | Trigger | Response |
@@ -337,6 +342,7 @@
 
 ---
 
+<a id="oled-display-panels"></a>
 ## 🖥️ OLED Display Panels
 
 | OLED | I²C Address | Displays | Animation Style |
@@ -411,6 +417,7 @@ mars-rover/
 
 ---
 
+<a id="roadmap"></a>
 ## 🗺️ Roadmap
 
 | Status | Feature | Version |
