@@ -337,8 +337,6 @@ This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) 
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00E6FF,30:007799,70:001822,100:02040A&height=140&section=footer&text=Built%20for%20Exploration&fontSize=20&fontColor=00E6FF&fontAlignY=65&animation=fadeIn" width="100%"/>
-
 <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=14&duration=4000&pause=2000&color=005566&center=true&vCenter=true&width=600&lines=◈+Mars+Rover+Mission+Control+v5.1+—+Enhanced+Edition+◈;◈+ESP32+·+Python+·+WebSocket+·+Real-Time+Telemetry+◈" alt="footer typing" />
 
 </div>
