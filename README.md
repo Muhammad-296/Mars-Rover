@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 MARS ROVER
+# MARS ROVER
 
 **`v5.1 Enhanced Edition`**
 
