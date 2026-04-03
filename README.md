@@ -359,23 +359,6 @@ This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) 
 
 ---
 
-## 📊 &nbsp; REPO STATS
-
-<div align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&repo=mars-rover&theme=react-dark&bg_color=02040A&color=00E6FF&line=00B8CC&point=00FF91&area=true&hide_border=true" width="100%" alt="Activity Graph"/>
-
-<br/><br/>
-
-<img src="https://img.shields.io/github/stars/Muhammad-296/mars-rover?style=for-the-badge&color=ffb900&labelColor=1a1100&label=⭐%20STARS" />
-&nbsp;
-<img src="https://img.shields.io/github/forks/Muhammad-296/mars-rover?style=for-the-badge&color=00ff91&labelColor=001a0e&label=🍴%20FORKS" />
-&nbsp;
-<img src="https://img.shields.io/github/issues/Muhammad-296/mars-rover?style=for-the-badge&color=ff2d37&labelColor=1a0003&label=🐛%20ISSUES" />
-
-</div>
-
----
 
 <div align="center">
 
