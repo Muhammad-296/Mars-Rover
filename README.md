@@ -552,12 +552,12 @@ This is usually a Wi-Fi power-saving issue on the router. Increasing the PING fr
 
 | Version | Date | Changes |
 |:-------:|:----:|:--------|
-| **v5.1** | 2024 | Added gripper servo · camera pan · dual OLED boot animation · auto-reconnect |
-| **v5.0** | 2024 | Full PyQt5 GUI rewrite · safety watchdog · proximity radar · telemetry charts |
-| **v4.0** | 2023 | Dual OLED display panels · drive state animations |
-| **v3.0** | 2023 | BMP280 sensor integration · HC-SR04 ultrasonic · telemetry streaming |
-| **v2.0** | 2023 | WebSocket protocol · Python GUI v1 · motor control |
-| **v1.0** | 2023 | Basic ESP32 motor control · serial commands |
+| **v5.1** | 2026 | Added gripper servo · camera pan · dual OLED boot animation · auto-reconnect |
+| **v5.0** | 2026 | Full PyQt5 GUI rewrite · safety watchdog · proximity radar · telemetry charts |
+| **v4.0** | 2026 | Dual OLED display panels · drive state animations |
+| **v3.0** | 2026 | BMP280 sensor integration · HC-SR04 ultrasonic · telemetry streaming |
+| **v2.0** | 2026 | WebSocket protocol · Python GUI v1 · motor control |
+| **v1.0** | 2026 | Basic ESP32 motor control · serial commands |
 
 ---
 
