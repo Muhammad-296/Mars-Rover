@@ -21,10 +21,10 @@
 
 <br/>
 
-![Stars](https://img.shields.io/github/stars/YOUR_USERNAME/mars-rover?style=flat-square&color=ffb900&labelColor=1a1100&label=⭐%20Stars)
-![Forks](https://img.shields.io/github/forks/YOUR_USERNAME/mars-rover?style=flat-square&color=00ff91&labelColor=001a0e&label=🍴%20Forks)
-![Issues](https://img.shields.io/github/issues/YOUR_USERNAME/mars-rover?style=flat-square&color=ff2d37&labelColor=1a0003&label=🐛%20Issues)
-![Last Commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/mars-rover?style=flat-square&color=00e6ff&labelColor=001822&label=📅%20Last%20Commit)
+![Stars](https://img.shields.io/github/stars/Muhammad-296/mars-rover?style=flat-square&color=ffb900&labelColor=1a1100&label=⭐%20Stars)
+![Forks](https://img.shields.io/github/forks/Muhammad-296/mars-rover?style=flat-square&color=00ff91&labelColor=001a0e&label=🍴%20Forks)
+![Issues](https://img.shields.io/github/issues/Muhammad-296/mars-rover?style=flat-square&color=ff2d37&labelColor=1a0003&label=🐛%20Issues)
+![Last Commit](https://img.shields.io/github/last-commit/Muhammad-296/mars-rover?style=flat-square&color=00e6ff&labelColor=001822&label=📅%20Last%20Commit)
 
 </div>
 
