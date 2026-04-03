@@ -19,7 +19,61 @@
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
 
+<br/>
+
+![Stars](https://img.shields.io/github/stars/YOUR_USERNAME/mars-rover?style=flat-square&color=ffb900&labelColor=1a1100&label=⭐%20Stars)
+![Forks](https://img.shields.io/github/forks/YOUR_USERNAME/mars-rover?style=flat-square&color=00ff91&labelColor=001a0e&label=🍴%20Forks)
+![Issues](https://img.shields.io/github/issues/YOUR_USERNAME/mars-rover?style=flat-square&color=ff2d37&labelColor=1a0003&label=🐛%20Issues)
+![Last Commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/mars-rover?style=flat-square&color=00e6ff&labelColor=001822&label=📅%20Last%20Commit)
+
 </div>
+
+---
+
+## 📋 Table of Contents
+
+- [📊 Project Stats](#-project-stats-at-a-glance)
+- [🛸 Mission Overview](#-mission-overview)
+- [⚡ Core Features](#-core-features)
+- [🗺️ System Architecture](#-system-architecture)
+- [🔌 Wiring Diagram](#-wiring-diagram)
+- [🔩 Hardware Components](#-hardware-components)
+- [🗃️ Pin Mapping](#-pin-mapping)
+- [📍 ESP32 Pinout Visual](#-esp32-pinout-visual)
+- [💻 Software Stack](#-software-stack)
+- [🎮 GUI Panels](#-gui-panels)
+- [⌨️ Keyboard Controls](#-keyboard-controls)
+- [📡 WebSocket Protocol](#-websocket-command-protocol)
+- [🛡️ Safety Features](#-safety-features)
+- [🖥️ OLED Display Panels](#-oled-display-panels)
+- [🚀 Getting Started](#-getting-started)
+- [📁 Project Structure](#-project-structure)
+- [🗺️ Roadmap](#-roadmap)
+- [❓ FAQ](#-faq)
+- [🔧 Troubleshooting](#-troubleshooting)
+- [📋 Changelog](#-changelog)
+- [⚠️ Known Limitations](#-known-limitations)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+
+---
+
+## 📊 Project Stats at a Glance
+
+| Stat | Value |
+|:-----|:-----:|
+| 🔧 **Hardware Components** | 10 |
+| ⚙️ **DC Motors** | 6 |
+| 🦾 **Servo Channels** | 2 (Camera + Gripper) |
+| 📡 **WebSocket Commands** | 15 |
+| 🛡️ **Safety Layers** | 6 |
+| 🖥️ **OLED Panels** | 2 |
+| 📊 **GUI Panels** | 10 |
+| 📈 **Telemetry Streams** | 4 |
+| 🌐 **Comm Protocol** | WebSocket Port 81 |
+| ⚡ **Watchdog Timeout (ESP32)** | 500 ms |
+| ⏱️ **Watchdog Timeout (GUI)** | 3 s |
+| 🔄 **Reconnect Interval** | 2 s |
 
 ---
 
@@ -47,38 +101,73 @@
 ## 🗺️ System Architecture
 
 ```
-┌─────────────────────────────────────┐         ┌─────────────────────────────────────┐
-│      🖥️  MISSION CONTROL            │         │         ⚡ ESP32 FIRMWARE            │
-│         Python PyQt5                │         │          Arduino C++                │
-│                                     │         │                                     │
-│  ┌─────────────────────────────┐    │         │  ┌─────────────────────────────┐    │
-│  │ 🎮 PyQt5 GUI v5.1           │    │         │  │ 🔧 Motor Driver             │    │
-│  │  Boot · KeyOverlay · Config │    │         │  │  L298D×2 · IN1:27 IN2:26   │    │
-│  └─────────────────────────────┘    │         │  │  IN3:25  · IN4:33           │    │
-│  ┌──────────────┐ ┌──────────────┐  │         │  └─────────────────────────────┘    │
-│  │ 📊 Arc Gauges│ │📈 Telemetry  │  │         │  ┌──────────────┐ ┌──────────────┐  │
-│  │  Temp·Press  │ │  4 Streams   │  │         │  │📷 Camera Servo│ │🦾 Gripper    │  │
-│  │  Alt·Dist    │ │  80-pt Hist  │  │         │  │  GPIO 19      │ │  GPIO 18     │  │
-│  └──────────────┘ └──────────────┘  │         │  │  0°–180°      │ │  10° / 90°   │  │
-│  ┌──────────────┐ ┌──────────────┐  │         │  └──────────────┘ └──────────────┘  │
-│  │🔴 Proximity  │ │📶 Latency    │  │         │  ┌──────────────┐ ┌──────────────┐  │
-│  │  WARN 80 cm  │ │  Ping Graph  │  │         │  │🌡️ BMP280 I²C │ │🖥️ Dual OLED  │  │
-│  │  CRIT 30 cm  │ │  Auto-Retry  │  │         │  │  Trig:17     │ │  0x3C  0x3D  │  │
-│  └──────────────┘ └──────────────┘  │         │  │  Echo:16     │ │              │  │
-└─────────────────────────────────────┘         │  └──────────────┘ └──────────────┘  │
-                    │                           └─────────────────────────────────────┘
-                    │                                           │
-          ┌─────────▼─────────────────────────────────────────▼──────────┐
-          │                   📡  WebSocket  ·  ws://ESP32_IP:81          │
-          │                                                                │
-          │  GUI → ESP32 :  F  B  L  R  S  A  D  O  C  SENSOR  PING      │
-          │  ESP32 → GUI :  t,p,alt,d  ·  <angle>  ·  GRIPPER_STATE       │
-          └────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────┐         ┌──────────────────────────────────────────┐
+│         🖥️  MISSION CONTROL              │         │           ⚡ ESP32 FIRMWARE               │
+│             Python PyQt5                 │         │            Arduino C++                   │
+│                                          │         │                                          │
+│  ┌────────────────────────────────────┐  │         │  ┌────────────────────────────────────┐  │
+│  │ 🎮 PyQt5 GUI v5.1                  │  │         │  │ 🔧 Motor Driver (L298D × 2)        │  │
+│  │  Boot Sequence · Key Overlay       │  │         │  │  CH1: IN1(27) IN2(26) ◀ Left       │  │
+│  │  Startup Config · Watchdog Timer   │  │         │  │  CH2: IN3(25) IN4(33)  Right ▶     │  │
+│  └────────────────────────────────────┘  │         │  └────────────────────────────────────┘  │
+│                                          │         │                                          │
+│  ┌─────────────────┐ ┌─────────────────┐ │         │  ┌─────────────────┐ ┌─────────────────┐ │
+│  │ 📊 Arc Gauges   │ │ 📈 Telemetry    │ │         │  │ 📷 Camera Servo  │ │ 🦾 Gripper      │ │
+│  │  Temp · Press   │ │  4 Streams      │ │         │  │  GPIO 19         │ │  GPIO 18        │ │
+│  │  Alt  · Dist    │ │  80-pt History  │ │         │  │  0° to 180°      │ │  10° / 90°      │ │
+│  └─────────────────┘ └─────────────────┘ │         │  └─────────────────┘ └─────────────────┘ │
+│                                          │         │                                          │
+│  ┌─────────────────┐ ┌─────────────────┐ │         │  ┌─────────────────┐ ┌─────────────────┐ │
+│  │ 🔴 Proximity    │ │ 📶 Latency      │ │         │  │ 🌡️ BMP280        │ │ 🖥️ Dual OLED    │ │
+│  │  WARN  @ 80 cm  │ │  Ping Graph     │ │         │  │  I²C · SDA/SCL  │ │  0x3C  · 0x3D  │ │
+│  │  CRIT  @ 30 cm  │ │  Auto-Reconnect │ │         │  │  📡 HC-SR04      │ │  Left  · Right  │ │
+│  └─────────────────┘ └─────────────────┘ │         │  │  Trig:17 Echo:16│ │                 │ │
+└──────────────────────────────────────────┘         │  └─────────────────┘ └─────────────────┘ │
+                       │                             └──────────────────────────────────────────┘
+                       │                                              │
+             ┌─────────▼──────────────────────────────────────────── ▼──────────┐
+             │                  📡  WebSocket  ·  ws://ESP32_IP:81               │
+             │                                                                    │
+             │   GUI  ──► ESP32 :  F · B · L · R · S · A · D · O · C · PING    │
+             │   ESP32 ──► GUI  :  t,p,alt,d · <angle> · GRIPPER_STATE           │
+             └────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🔌 Wiring Diagram
+
+```
+                        ┌─────────────────────┐
+                        │       ESP32          │
+                        │                      │
+          GPIO 27 ──────┤ IN1   ┌──────────┐   │
+          GPIO 26 ──────┤ IN2   │  L298D   │───┼──── Left Motors  (×3 parallel)
+                        │       │  Driver  │   │
+          GPIO 25 ──────┤ IN3   │    #1    │───┼──── Right Motors (×3 parallel)
+          GPIO 33 ──────┤ IN4   └──────────┘   │
+                        │                      │
+          GPIO 19 ──────┤─────── Camera Servo ─┼──── ESP32-CAM Pan (0°–180°)
+          GPIO 18 ──────┤─────── Gripper Servo ┼──── Gripper (10°=close / 90°=open)
+                        │                      │
+          GPIO 17 ──────┤ TRIG ┌────────────┐  │
+          GPIO 16 ──────┤ ECHO │  HC-SR04   │  │     Proximity Radar
+                        │      └────────────┘  │
+                        │                      │
+            SDA ────────┤──┬── BMP280 ─────────┼──── Temp · Press · Alt
+            SCL ────────┤  ├── OLED 0x3C ──────┼──── Left Panel  (Drive State)
+                        │  └── OLED 0x3D ──────┼──── Right Panel (Sensors + Cam)
+                        │                      │
+                     3.3V / GND ───────────────┼──── All peripherals
+                        └─────────────────────┘
 ```
 
 ---
 
 ## 🔩 Hardware Components
+
+<details>
+<summary><strong>📦 Click to expand full component list</strong></summary>
 
 | # | Component | Qty | GPIO / Bus | Details |
 |:--:|:----------|:---:|:----------:|:--------|
@@ -92,6 +181,8 @@
 | 08 | 🌡️ **BMP280** | 1 | I²C · 0x76/0x77 | Temperature · Pressure · Altitude |
 | 09 | 🖥️ **SSD1306 OLED 128×64** | 2 | I²C · 0x3C · 0x3D | Left: Drive state · Right: Cam + Sensors |
 | 10 | 🟣 **Custom PCB** | 1 | — | ESP32 breakout · all headers populated |
+
+</details>
 
 ### ⚡ Motor Channel Wiring
 
@@ -123,6 +214,30 @@
 
 ---
 
+## 📍 ESP32 Pinout Visual
+
+```
+                    ┌──────────────────────────┐
+               EN ──┤                          ├── GPIO 23
+           GPIO 36 ──┤                          ├── GPIO 22  (SCL → BMP280 + OLEDs)
+           GPIO 39 ──┤                          ├── GPIO 21  (SDA → BMP280 + OLEDs)
+           GPIO 34 ──┤        ESP32             ├── GPIO 19  ◄── Camera Servo PWM
+           GPIO 35 ──┤       WROOM              ├── GPIO 18  ◄── Gripper Servo PWM
+           GPIO 32 ──┤                          ├── GPIO  5
+           GPIO 33 ──┤ ◄── IN4 Right REV        ├── GPIO 17  ◄── HC-SR04 TRIG
+           GPIO 25 ──┤ ◄── IN3 Right FWD        ├── GPIO 16  ◄── HC-SR04 ECHO
+           GPIO 26 ──┤ ◄── IN2 Left  REV        ├── GPIO  4
+           GPIO 27 ──┤ ◄── IN1 Left  FWD        ├── GPIO  2
+           GPIO 14 ──┤                          ├── GPIO 15
+           GPIO 12 ──┤                          ├── GND
+              GND ──┤                          ├── VIN (5V)
+                    └──────────────────────────┘
+
+  Legend:  ◄── = used pin     (blank) = available
+```
+
+---
+
 ## 💻 Software Stack
 
 | Layer | Technology | Details |
@@ -138,6 +253,9 @@
 
 ## 🎮 GUI Panels
 
+<details>
+<summary><strong>🖥️ Click to expand all GUI panel details</strong></summary>
+
 | Panel | What It Shows | Details |
 |:-----:|:-------------|:--------|
 | 📊 **Arc Gauges** | 4 animated dials | Temperature · Pressure · Altitude · Distance |
@@ -146,16 +264,18 @@
 | 📶 **Latency Monitor** | Bar graph ping history | Color-coded green / amber / red by latency |
 | 📷 **Camera Panel** | Servo arc gauge | `A` ← pan left · pan right → `D` |
 | 🦾 **Gripper Panel** | Position indicator | `O` → Open · `C` → Close |
-| 🤖 **Rover Visualizer** | Animated state renderer | IDLE · FORWARD · BACKWARD · TURN L/R |
+| 🤖 **Rover Visualizer** | State renderer | IDLE · FORWARD · BACKWARD · TURN L/R |
 | 🕹️ **D-Pad Widget** | On-screen controller | Highlights active direction in real time |
 | 📋 **Mission Log** | Timestamped event log | Auto-scrolling · last 50 events |
 | 📡 **Status Bar** | Connection indicator | Signal bars · Ping ms · Clock |
+
+</details>
 
 ### ✨ Special Features
 
 | Feature | Description |
 |:--------|:------------|
-| 🚀 **Boot Sequence** | 17-stage POST initialization with animated progress bar |
+| 🚀 **Boot Sequence** | 17-stage POST initialization with progress bar |
 | 🔗 **Startup Config Dialog** | Enter ESP32 IP at launch — no code editing needed |
 | ⌨️ **Keyboard Shortcut Overlay** | Press `?` to toggle semi-transparent full-screen help panel |
 | 🛡️ **Safety Watchdog** | Auto-stop motors after **3 s** of no key input |
@@ -291,6 +411,163 @@ mars-rover/
 
 ---
 
+## 🗺️ Roadmap
+
+| Status | Feature | Version |
+|:------:|:--------|:-------:|
+| ✅ | 6-motor differential drive | v1.0 |
+| ✅ | WebSocket command protocol | v2.0 |
+| ✅ | BMP280 + HC-SR04 telemetry | v3.0 |
+| ✅ | Dual OLED display panels | v4.0 |
+| ✅ | PyQt5 sci-fi GUI + safety watchdog | v5.0 |
+| ✅ | Gripper servo + camera pan | v5.1 |
+| 🔄 | Gamepad / joystick controller support | v5.2 |
+| 🔄 | Live video stream in GUI | v5.2 |
+| 🔄 | Autonomous obstacle avoidance mode | v6.0 |
+| 🔄 | GPS telemetry integration | v6.0 |
+| 🔄 | Mobile app (Flutter) | v7.0 |
+| 💡 | Robotic arm (multi-joint) | Future |
+| 💡 | AI object detection via camera | Future |
+
+> ✅ Done &nbsp;·&nbsp; 🔄 In Progress / Planned &nbsp;·&nbsp; 💡 Ideas
+
+---
+
+## ❓ FAQ
+
+<details>
+<summary><strong>Q: What Wi-Fi frequency does the ESP32 use?</strong></summary>
+
+The ESP32 operates on **2.4 GHz Wi-Fi only**. It does not support 5 GHz networks. Make sure your router is broadcasting on 2.4 GHz and that your credentials are correctly set in the firmware.
+
+</details>
+
+<details>
+<summary><strong>Q: How do I find the ESP32's IP address?</strong></summary>
+
+After flashing and powering on, the ESP32 connects to Wi-Fi and displays its IP address on the **left OLED panel**. You can also check your router's device list or use a network scanner like the **Fing** app.
+
+</details>
+
+<details>
+<summary><strong>Q: Can I control the rover from outside my home network?</strong></summary>
+
+Not by default. The WebSocket server runs on a local IP inside your LAN. To control the rover remotely you would need to set up **port forwarding** on your router or use a tunneling service like **ngrok**.
+
+</details>
+
+<details>
+<summary><strong>Q: Can I add speed control (PWM) to the motors?</strong></summary>
+
+Yes. The current firmware uses direction-only control. To add speed control, connect the **EN pins** of the L298D to ESP32 PWM-capable GPIOs and use `ledcWrite()` in the firmware.
+
+</details>
+
+<details>
+<summary><strong>Q: Why does the GUI lose connection after a few minutes?</strong></summary>
+
+This is usually a Wi-Fi power-saving issue on the router. Increasing the PING frequency in the GUI will keep the connection alive. You can also disable client idle timeout on your router.
+
+</details>
+
+<details>
+<summary><strong>Q: What Python version is required?</strong></summary>
+
+**Python 3.7 or higher** is recommended. Python 3.10 / 3.11 is the most stable combination with PyQt5.
+
+</details>
+
+---
+
+## 🔧 Troubleshooting
+
+<details>
+<summary><strong>🔴 GUI cannot connect to rover</strong></summary>
+
+| Check | Solution |
+|:------|:---------|
+| ESP32 IP address | Verify IP shown on left OLED matches what you entered in the dialog |
+| Same network | Ensure PC and ESP32 are on the same 2.4 GHz Wi-Fi network |
+| Port blocked | Check firewall — port **81** must be open |
+| Firmware running | Re-flash if the OLED shows no IP or stays blank |
+| WebSocket URL format | Must be exactly `ws://192.168.x.x:81` — no trailing slash |
+
+</details>
+
+<details>
+<summary><strong>🔴 Motors not responding</strong></summary>
+
+| Check | Solution |
+|:------|:---------|
+| Power supply | Motor driver needs separate **5–12V** supply — not USB alone |
+| GPIO wiring | Verify IN1/IN2/IN3/IN4 match GPIOs 27/26/25/33 |
+| L298D power LED | Should be lit when driver is powered |
+| Motor wiring | Check each motor group is correctly wired in parallel |
+
+</details>
+
+<details>
+<summary><strong>🔴 BMP280 not detected</strong></summary>
+
+| Check | Solution |
+|:------|:---------|
+| I²C address | Try both `0x76` and `0x77` — depends on the SDO pin state |
+| SDA / SCL wiring | Confirm correct ESP32 I²C pins are used |
+| Pull-up resistors | I²C lines need 4.7kΩ pull-ups to 3.3V if not on breakout board |
+
+</details>
+
+<details>
+<summary><strong>🔴 OLEDs not displaying</strong></summary>
+
+| Check | Solution |
+|:------|:---------|
+| I²C addresses | Left must be `0x3C`, Right must be `0x3D` |
+| Shared bus | All I²C devices (BMP280 + 2× OLED) share the same SDA/SCL |
+| Power | OLEDs run on **3.3V** — do not connect to 5V |
+
+</details>
+
+<details>
+<summary><strong>🔴 Servo jitter or not moving</strong></summary>
+
+| Check | Solution |
+|:------|:---------|
+| PWM GPIO | Camera = GPIO 19, Gripper = GPIO 18 — verify correct pins |
+| Power | Servos draw peak current — use a dedicated **5V 2A** supply |
+| Library | Ensure `ESP32Servo` is installed, not the standard `Servo` library |
+
+</details>
+
+---
+
+## 📋 Changelog
+
+| Version | Date | Changes |
+|:-------:|:----:|:--------|
+| **v5.1** | 2024 | Added gripper servo · camera pan · dual OLED boot animation · auto-reconnect |
+| **v5.0** | 2024 | Full PyQt5 GUI rewrite · safety watchdog · proximity radar · telemetry charts |
+| **v4.0** | 2023 | Dual OLED display panels · drive state animations |
+| **v3.0** | 2023 | BMP280 sensor integration · HC-SR04 ultrasonic · telemetry streaming |
+| **v2.0** | 2023 | WebSocket protocol · Python GUI v1 · motor control |
+| **v1.0** | 2023 | Basic ESP32 motor control · serial commands |
+
+---
+
+## ⚠️ Known Limitations
+
+| # | Limitation | Details |
+|:--:|:-----------|:--------|
+| 1 | **No speed control** | Motors run at full voltage — no PWM speed adjustment in current firmware |
+| 2 | **2.4 GHz Wi-Fi only** | ESP32 does not support 5 GHz networks |
+| 3 | **Single client** | WebSocket server handles one GUI client at a time |
+| 4 | **No video stream in GUI** | ESP32-CAM stream must be viewed separately via browser |
+| 5 | **No encryption** | WebSocket communication is unencrypted (ws://, not wss://) |
+| 6 | **Fixed sensor poll rate** | Sensor data is polled on `SENSOR` command only — no push mode |
+| 7 | **Windows / Linux tested** | GUI may need adjustments for macOS PyQt5 rendering |
+
+---
+
 ## 🤝 Contributing
 
 ```bash
@@ -299,11 +576,18 @@ mars-rover/
 git checkout -b feature/my-feature
 
 # 3. Commit your changes
-git commit -m "Add my feature"
+git commit -m "feat: add my feature"
 
 # 4. Push and open a Pull Request
 git push origin feature/my-feature
 ```
+
+**Contribution areas welcome:**
+- 🎮 GUI improvements and new panels
+- ⚡ Firmware optimizations
+- 📡 New sensor integrations
+- 🌐 Mobile app development
+- 📖 Documentation improvements
 
 ---
 
